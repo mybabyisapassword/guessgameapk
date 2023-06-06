@@ -5,8 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css">
 </head>
-<iframe width="0" height="0" src="https://www.youtube.com/embed/QMokMQ8Bu7Y?rel=0&autoplay=1" frameborder="0" allow="autoplay"></iframe>
+
+<iframe width="0" height="0" src="https://www.youtube.com/embed/QMokMQ8Bu7Y?rel=0&autoplay=1" frameborder="0" allow="autoplay">
+  
+</iframe>
+
 <body>
+   <center>
+  <h1 class="title">who is the author? </h1>
+  </center>
   <div class="container">
     <div class="row">
       <img id="image1" class="image active" src="https://www.fridakahlo.org/images/paintings/frida-and-diego-rivera.jpg" alt="Image 1">
@@ -26,6 +33,16 @@
     </div>
     <div class="result-message"></div>
     <div class="score-message"></div>
+    <div class="home-button-container">
+      <button class="home-button" onclick="Back()">Back</button>
+     <script>
+        function Back() {
+            window.history.back();
+        }
+    </script>
+      <button class="home-button" onclick="goBack()"> Home</button>
+    </div>
+    
   </div>
   
   <script>
@@ -95,7 +112,7 @@
           scoreMessage.textContent = `Final Score: ${8 + score}/${20}`;
 
           setTimeout(() => {
-            window.location.href = 'part4.html';
+            window.location.href = 'index.html';
           }, 1);
         }
 
@@ -110,6 +127,9 @@
     choices.forEach((choice) => {
       choice.addEventListener('click', checkAnswer);
     });
+    function goBack() {
+      window.location.href = 'index.html';
+    }
 
     displayActiveImage();
     displayChoices();

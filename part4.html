@@ -4,8 +4,13 @@
   <title>Part 4</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <iframe width="0" height="0" src="https://www.youtube.com/embed/QMokMQ8Bu7Y?rel=0&autoplay=1" frameborder="0" allow="autoplay"></iframe>
+
 <body>
+   <center>
+  <h1 class="title">who is the author? </h1>
+  </center>
   <div class="container">
     <div class="row">
       <img id="image1" class="image active" src="https://www.theartist.me/wp-content/uploads/2019/11/andy-warhol-marilyn-1200x800.jpg" alt="Image 1">
@@ -25,6 +30,15 @@
     </div>
     <div class="result-message"></div>
     <div class="score-message"></div>
+    <div class="home-button-container">
+      <button class="home-button" onclick="Back()">Back</button>
+     <script>
+        function Back() {
+            window.history.back();
+        }
+      <button class="home-button" onclick="goBack()"> Home</button>
+    </div>
+    
   </div>
 
   <script>
@@ -102,6 +116,9 @@
     choices.forEach((choice) => {
       choice.addEventListener('click', checkAnswer);
     });
+    function goBack() {
+      window.location.href = 'index.html';
+    }
 
     displayActiveImage();
     displayChoices();
